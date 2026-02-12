@@ -29,4 +29,7 @@ jobs:
         run: pytest tests --ignore=tests/benchmark
 
       - name: Run benchmark comparison
-        run: pytest tests/benchmark --benchmark-compare=baseline --benchmark-fail=mean:5%
+        run: |
+          pytest tests/benchmark \
+            --benchmark-compare=baseline \
+            --benchmark-compare-fail=mean:5%
